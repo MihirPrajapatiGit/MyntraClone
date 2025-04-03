@@ -6,7 +6,14 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Header.css";
 
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    localStorage.setItem("isAuthenticated", "true");
+    navigate("/dashboard");
+  };
   return (
     <header className="header">
       <div className="logo">
@@ -14,7 +21,9 @@ const Header = () => {
       </div>
 
       <nav className="navigation-menu">
-        <button className="nav-buttons-men">MEN</button>
+        <button onClick={handleLogin} className="nav-buttons-men">
+          MEN
+        </button>
         <button className="nav-buttons-women">WOMEN</button>
         <button className="nav-buttons-kids">KIDS</button>
         <button className="nav-buttons-Home">HOME</button>
