@@ -3,7 +3,7 @@ const categoryImages1: string[] = [
   "src/assets/MEN-Menu/10002.jpg",
   "src/assets/MEN-Menu/10003.jpg",
   "src/assets/MEN-Menu/10004.jpg",
-  "src/assets/MEN-Menu/10005.jpg",
+  "src/assets/MEN-Menu/10005.jpg", //data
   "src/assets/MEN-Menu/10006.jpg",
 ];
 
