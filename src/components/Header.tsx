@@ -12,7 +12,6 @@ const Header = () => {
   const navigate = useNavigate();
   const handleLogin = () => {
     localStorage.setItem("isAuthenticated", "true");
-    navigate("/MEN-Menu");
   };
   return (
     <header className="header">
@@ -21,10 +20,18 @@ const Header = () => {
       </div>
 
       <nav className="navigation-menu">
-        <button onClick={handleLogin} className="nav-buttons-men">
+        <button
+          onClick={() => navigate("/MEN-Menu")}
+          className="nav-buttons-men"
+        >
           MEN
         </button>
-        <button className="nav-buttons-women">WOMEN</button>
+        <button
+          onClick={() => navigate("/WOMEN-Menu")}
+          className="nav-buttons-women"
+        >
+          WOMEN
+        </button>
         <button className="nav-buttons-kids">KIDS</button>
         <button className="nav-buttons-Home">HOME</button>
         <button className="nav-buttons-beauty">BEAUTY</button>

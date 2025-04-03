@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 // import Dashboard from "./components/Dashboard";
 import Main from "./components/Main first";
 import MenCategory from "./components/MenMenu/MenCategory";
+import WomenCategory from "./components/WomenMenu/WomenCategory";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />}></Route>
           <Route path="/MEN-Menu" element={<MenCategory />}></Route>
+          <Route path="/WOMEN-Menu" element={<WomenCategory />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
