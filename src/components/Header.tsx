@@ -12,7 +12,7 @@ const Header = () => {
   const navigate = useNavigate();
   const handleLogin = () => {
     localStorage.setItem("isAuthenticated", "true");
-    navigate("/dashboard");
+    navigate("/MEN-Menu");
   };
   return (
     <header className="header">

@@ -4,8 +4,9 @@ import "./App.css";
 // import Footer from "./components/Footer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
-import Dashboard from "./components/Dashboard";
+// import Dashboard from "./components/Dashboard";
 import Main from "./components/Main first";
+import MenCategory from "./components/MenMenu/MenCategory";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/MEN-Menu" element={<MenCategory />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

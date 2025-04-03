@@ -1,10 +1,10 @@
 const categoryImages1: string[] = [
-  "src/assets/shopbycategory/MEN-Menu/10001.jpg",
-  "src/assets/shopbycategory/MEN-Menu/10002.jpg",
-  "src/assets/shopbycategory/MEN-Menu/10003.jpg",
-  "src/assets/shopbycategory/MEN-Menu/10004.jpg",
-  "src/assets/shopbycategory/MEN-Menu/10005.jpg",
-  "src/assets/shopbycategory/MEN-Menu/10006.jpg",
+  "src/assets/MEN-Menu/10001.jpg",
+  "src/assets/MEN-Menu/10002.jpg",
+  "src/assets/MEN-Menu/10003.jpg",
+  "src/assets/MEN-Menu/10004.jpg",
+  "src/assets/MEN-Menu/10005.jpg",
+  "src/assets/MEN-Menu/10006.jpg",
 ];
 
 const categoryImages2: string[] = [
