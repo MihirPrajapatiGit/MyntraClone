@@ -1,4 +1,5 @@
-import "../styles/main.css";
+// import "../styles/main.css";
+import "../styles/Main.css";
 interface ShopByCategoryProps {
   images: string[];
 }
