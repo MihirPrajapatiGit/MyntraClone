@@ -1,0 +1,71 @@
+.main {
+  background-color: white;
+  border-top: solid 10px rgb(247, 244, 244);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 77px;
+  align-items: center;
+}
+
+.flat500off-img,
+.discount,
+.omg,
+.shopbycat,
+.More-img {
+  display: block;
+  width: 85%;
+  margin: 10px auto;
+}
+
+.kiara-ranbir {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.kiara,
+.ranbir {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flat100-200off {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.flat100off,
+.flat200off {
+  width: 100%;
+}
+
+.shopbycategory {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.shopbycategory-img {
+  width: 100%;
+  max-width: 250px;
+  cursor: pointer;
+}
+
+.download {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.googleplay,
+.appstore {
+  width: 40%;
+  max-width: 200px;
+}

@@ -1,0 +1,258 @@
+
+.logo{
+    margin: 0px 0px 0px 65.5px;
+    height: 80;
+    width: 53;
+
+}
+
+.logo-img{
+    height:36;
+    width: 53;
+    padding: 0;
+    margin: 0;
+}
+/* navigation-menu*/
+
+.navigation-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    margin-top:0px;
+    margin-left: 45px;
+    margin-right: 45px;
+    padding: 0;
+}
+
+.navigation-menu button {
+    height: 45px;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: white;
+    border: none;
+    padding: 17px;
+    
+}
+
+.nav-buttons-men:hover{
+    border-bottom: solid;
+    border-color:crimson ;
+}
+
+.nav-buttons-men .men-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-men:hover .men-menu{
+    opacity: 1;
+}
+
+
+.nav-buttons-women:hover{
+    border-bottom: solid;
+    border-color:rgb(244, 152, 168) ;
+}
+
+
+.nav-buttons-women .women-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-women:hover .women-menu{
+    opacity: 1;
+}
+
+.nav-buttons-kids:hover{
+    border-bottom: solid;
+    border-color: rgb(237, 154, 0) ;
+}
+
+.nav-buttons-kids .kids-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-kids:hover .kids-menu{
+    opacity: 1;
+}
+
+.nav-buttons-Home:hover{
+    border-bottom: solid;
+    border-color:rgb(255, 221, 0) ;
+}
+
+.nav-buttons-Home .home-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-Home:hover .home-menu{
+    opacity: 1;
+}
+
+.nav-buttons-beauty:hover{
+    border-bottom: solid;
+    border-color:rgb(34, 243, 232) ;
+}
+
+.nav-buttons-beauty .beauty-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-beauty:hover .beauty-menu{
+    opacity: 1;
+}
+
+.nav-buttons-studio:hover{
+    border-bottom: solid;
+    border-color:crimson ;
+}
+
+.nav-buttons-studio .studio-menu{
+    
+    background-color: rgb(247, 244, 244);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 13px;
+    bottom: -60;
+    opacity: 0;
+
+}
+
+.nav-buttons-studio:hover .studio-menu{
+    opacity: 1;
+}
+
+.nav-buttons-Home {
+    width: 172px;
+}
+
+
+
+
+/* search-bar */
+
+.search-bar-container{
+    display: flex;
+    flex-direction: row;
+    margin-right: 13px;
+    margin-left: 0px;
+
+}
+
+.search-button {
+    padding-right: 5px;
+    background-color: rgb(247, 244, 244);
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-left: 9px;
+    
+}
+
+.search-bar{
+    background-color: rgb(247, 244, 244);
+    width: 440px;
+    height: 40px;
+    padding-left: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* User-Action-control */
+
+
+.user-action-controls-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: white;
+    margin-right: 55px;
+
+}
+
+.user-action-controls-container button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px 0 15px;
+    height: 45px;
+    background-color: white;
+    border: none;
+    cursor: pointer; 
+    
+}
+
+.user-profile-icon{
+   margin: 8px 0px 0px; 
+}
+
+.user-wishlist-icon{
+    margin: 8px 0px 0px; 
+  
+}
+
+.user-cart-icon{
+    margin: 8px 0px 0px; 
+}
+
+.user-profile-text{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight:bold;
+    margin-top: 4px;
+    padding: 10px, 0px, 0px
+}
+
+
+
