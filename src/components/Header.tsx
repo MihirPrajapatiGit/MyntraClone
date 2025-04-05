@@ -10,9 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const handleLogin = () => {
-    localStorage.setItem("isAuthenticated", "true");
-  };
   return (
     <header className="header">
       <div className="logo">
