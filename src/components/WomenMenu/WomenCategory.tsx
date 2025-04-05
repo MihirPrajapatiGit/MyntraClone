@@ -34,6 +34,14 @@ const Main = () => {
         </div>
       </section>
 
+      <section className="discount-container">
+        <img
+          src="src/assets/MEN-Menu/cashback.gif"
+          alt="Discount Offers"
+          className="discount"
+        />
+      </section>
+
       <section className="shopbycat-container">
         <img
           src="src/assets/WOMEN-Menu/sky-high.jpg"
