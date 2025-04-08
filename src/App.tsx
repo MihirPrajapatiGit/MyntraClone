@@ -1,13 +1,15 @@
 import "./styles/Header.css";
 import "./App.css";
-// import Main from "./components/Main";
-// import Footer from "./components/Footer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 // import Dashboard from "./components/Dashboard";
 import Main from "./components/Main first";
 import MenCategory from "./components/MenMenu/MenCategory";
 import WomenCategory from "./components/WomenMenu/WomenCategory";
+import MenProductGrid from "./components/MenMenu/MenProductCard";
+import Cart from "./components/cart";
+import BeautyProductGrid from "./components/BeautyMenu/BeautyProductCard";
+import WomenProductGrid from "./components/WomenMenu/WomenProductCard";
 
 function App() {
   return (
@@ -22,7 +24,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />}></Route>
           <Route path="/MEN-Menu" element={<MenCategory />}></Route>
+          <Route path="/MEN-Menu/products" element={<MenProductGrid />} />
           <Route path="/WOMEN-Menu" element={<WomenCategory />}></Route>
+          <Route path="/WOMEN-Menu/products" element={<WomenProductGrid />} />
+          <Route path="/BeautyMenu/products" element={<BeautyProductGrid />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

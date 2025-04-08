@@ -5,6 +5,7 @@ import {
   categoryImages2,
   categoryImages3,
 } from "./WomenCategoryData";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -58,10 +59,17 @@ const Main = () => {
         />
       </section>
 
-      {/* Shop By Category Sections */}
-      <ShopByCategory images={categoryImages1} />
-      <ShopByCategory images={categoryImages2} />
-      <ShopByCategory images={categoryImages3} />
+      <Link to="/WOMEN-Menu/products">
+        <ShopByCategory images={categoryImages1} />
+      </Link>
+
+      <Link to="/WOMEN-Menu/products">
+        <ShopByCategory images={categoryImages2} />
+      </Link>
+
+      <Link to="/WOMEN-Menu/products">
+        <ShopByCategory images={categoryImages3} />
+      </Link>
 
       <section className="More">
         <img

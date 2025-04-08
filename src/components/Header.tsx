@@ -31,7 +31,12 @@ const Header = () => {
         </button>
         <button className="nav-buttons-kids">KIDS</button>
         <button className="nav-buttons-Home">HOME</button>
-        <button className="nav-buttons-beauty">BEAUTY</button>
+        <button
+          onClick={() => navigate("/BeautyMenu/products")}
+          className="nav-buttons-beauty"
+        >
+          BEAUTY
+        </button>
         <button className="nav-buttons-beauty">GENZ</button>
         <button className="nav-buttons-studio">
           STUDIO
@@ -59,7 +64,7 @@ const Header = () => {
           <FontAwesomeIcon icon={faHeart} />
           <span>Wishlist</span>
         </button>
-        <button className="user-cart-icon">
+        <button className="user-cart-icon" onClick={() => navigate("/cart")}>
           <FontAwesomeIcon icon={faBagShopping} />
           <span>Cart</span>
         </button>

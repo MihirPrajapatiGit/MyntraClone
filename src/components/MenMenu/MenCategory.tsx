@@ -6,6 +6,8 @@ import {
   categoryImages3,
 } from "./MenCategoryData";
 
+import { Link } from "react-router-dom";
+
 const Main = () => {
   return (
     <main className="main">
@@ -59,9 +61,17 @@ const Main = () => {
       </section>
 
       {/* Shop By Category Sections */}
-      <ShopByCategory images={categoryImages1} />
-      <ShopByCategory images={categoryImages2} />
-      <ShopByCategory images={categoryImages3} />
+      <Link to="/MEN-Menu/products">
+        <ShopByCategory images={categoryImages1} />
+      </Link>
+
+      <Link to="/MEN-Menu/products">
+        <ShopByCategory images={categoryImages2} />
+      </Link>
+
+      <Link to="/MEN-Menu/products">
+        <ShopByCategory images={categoryImages3} />
+      </Link>
 
       <section className="More">
         <img
