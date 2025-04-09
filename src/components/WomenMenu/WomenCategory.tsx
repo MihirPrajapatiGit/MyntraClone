@@ -12,7 +12,7 @@ const Main = () => {
     <main className="main">
       <section className="flat500off">
         <img
-          src="../../../public/WOMEN-Menu/flat400off.jpg"
+          src="/WOMEN-Menu/flat400off.jpg"
           alt="Flat 500 Off"
           className="flat500off-img"
         />
@@ -21,14 +21,14 @@ const Main = () => {
       <section className="flat100-200off">
         <div>
           <img
-            src="../../../public/WOMEN-Menu/flat100off.jpg"
+            src="/WOMEN-Menu/flat100off.jpg"
             alt="Flat 100 Off"
             className="flat100off"
           />
         </div>
         <div>
           <img
-            src="../../../public/MEN-Menu/flat200off.jpg"
+            src="/MEN-Menu/flat200off.jpg"
             alt="Flat 200 Off"
             className="flat200off"
           />
@@ -37,7 +37,7 @@ const Main = () => {
 
       <section className="discount-container">
         <img
-          src="../../../public/MEN-Menu/cashback.gif"
+          src="/MEN-Menu/cashback.gif"
           alt="Discount Offers"
           className="discount"
         />
@@ -45,7 +45,7 @@ const Main = () => {
 
       <section className="shopbycat-container">
         <img
-          src="../../../public/WOMEN-Menu/sky-high.jpg"
+          src="/WOMEN-Menu/sky-high.jpg"
           alt="Shop by Category"
           className="shopbycat"
         />
@@ -53,7 +53,7 @@ const Main = () => {
 
       <section className="shopbycat-container">
         <img
-          src="../../../public/WOMEN-Menu/ExeploreByCat.jpg"
+          src="/WOMEN-Menu/ExeploreByCat.jpg"
           alt="Shop by Category"
           className="shopbycat"
         />
@@ -73,7 +73,7 @@ const Main = () => {
 
       <section className="More">
         <img
-          src="../../../public/WOMEN-Menu/More.jpg"
+          src="/WOMEN-Menu/More.jpg"
           alt="More Offers"
           className="More-img"
         />
