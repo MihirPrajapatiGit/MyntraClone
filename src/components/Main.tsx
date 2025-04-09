@@ -1,4 +1,4 @@
-import "../styles/main.css";
+import "../styles/Main.css";
 import ShopByCategory from "../components/ShopByCategory";
 import {
   categoryImages1,
