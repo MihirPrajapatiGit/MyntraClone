@@ -3,7 +3,7 @@ import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 // import Dashboard from "./components/Dashboard";
-import Main from "./components/Main first";
+import Main from "./components/Main";
 import MenCategory from "./components/MenMenu/MenCategory";
 import WomenCategory from "./components/WomenMenu/WomenCategory";
 import MenProductGrid from "./components/MenMenu/MenProductCard";
