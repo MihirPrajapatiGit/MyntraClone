@@ -1,17 +1,29 @@
 import React from "react";
 import "../../styles/productCard.css";
 import products from "./BeautyProductData";
-
 type Product = {
   imageSrc: string;
   name: string;
   review: string;
   price: string;
+  quantity?: number;
 };
 
 const addToCart = (product: Product) => {
-  const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
-  existingCart.push(product);
+  const existingCart: Product[] = JSON.parse(
+    localStorage.getItem("cart") || "[]"
+  );
+  const productIndex = existingCart.findIndex(
+    (item) => item.name === product.name
+  );
+
+  if (productIndex !== -1) {
+    existingCart[productIndex].quantity =
+      (existingCart[productIndex].quantity || 1) + 1;
+  } else {
+    existingCart.push({ ...product, quantity: 1 });
+  }
+
   localStorage.setItem("cart", JSON.stringify(existingCart));
 };
 

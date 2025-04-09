@@ -5,6 +5,7 @@ type Product = {
   name: string;
   review: string;
   price: string;
+  quantity?: number;
 };
 
 const Cart: React.FC = () => {
@@ -16,6 +17,27 @@ const Cart: React.FC = () => {
       setCartItems(JSON.parse(cartData));
     }
   }, []);
+
+  const updateCart = (updatedItems: Product[]) => {
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
+  };
+
+  const increaseQuantity = (index: number) => {
+    const updated = [...cartItems];
+    updated[index].quantity = (updated[index].quantity || 1) + 1;
+    updateCart(updated);
+  };
+
+  const decreaseQuantity = (index: number) => {
+    const updated = [...cartItems];
+    if ((updated[index].quantity || 1) > 1) {
+      updated[index].quantity = (updated[index].quantity || 1) - 1;
+    } else {
+      updated.splice(index, 1); // remove item if quantity is 1
+    }
+    updateCart(updated);
+  };
 
   return (
     <div style={{ padding: "20px" }}>
@@ -30,6 +52,13 @@ const Cart: React.FC = () => {
               <div className="product-name">{item.name}</div>
               <div className="product-review">{item.review}</div>
               <div className="product-price">{item.price}</div>
+              <div className="product-quantity">
+                Quantity: {item.quantity || 1}
+              </div>
+              <div className="cart-buttons">
+                <button onClick={() => increaseQuantity(index)}>➕</button>
+                <button onClick={() => decreaseQuantity(index)}>➖</button>
+              </div>
             </div>
           ))}
         </div>
