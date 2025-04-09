@@ -80,7 +80,14 @@
 
 @media (max-width: 320px) {
   .main{
-    border-top: solid 2px rgb(247, 244, 244);
+    border-top: solid 0px rgb(247, 244, 244);
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .main{
+    border-top: solid 0px rgb(247, 244, 244);
     
   }
 }
