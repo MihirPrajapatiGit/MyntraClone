@@ -206,13 +206,54 @@
 }
 
 @media (max-width: 320px) {
+
+  .header {
+    padding: 0 10px;
+    height: 65px;
+  }
+  .hamburger {
+    font-size: 18px;
+  }
+
+  .left-section {
+    margin-top: 10px;
+    gap: 5px;
+    height: 15px;
+  }
+
+  .logo img {
+    height: 35px;
+    width: auto;
+  }
+
+  .search-bar-wrapper {
+    margin-top: 66px;
+    }
+
+  .search-button {
+    height: 30px;
+  
+  }
+  
   .search-bar{
     font-size: 12px;
+    height: 28px;
   }
   
   .search-bar-container{
     width: 100%;
     margin: 0 auto;
   }
+
+  .user-action-controls-container button {
+    font-size: 11px;
+  }
+
+  .user-action-controls-container {
+    display: flex;
+    gap: 0px;
+    height: 15px;
+  }
+  
 }
 
