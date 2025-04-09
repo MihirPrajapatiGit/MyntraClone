@@ -21,7 +21,10 @@ const ProductCard: React.FC<Product> = ({ imageSrc, name, review, price }) => (
     <div className="product-review">{review}</div>
     <div className="product-name">{name}</div>
     <div className="product-price">{price}</div>
-    <button onClick={() => addToCart({ imageSrc, name, review, price })}>
+    <button
+      className="product-add-to-cart"
+      onClick={() => addToCart({ imageSrc, name, review, price })}
+    >
       ADD TO CART
     </button>
   </div>
