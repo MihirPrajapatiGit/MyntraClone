@@ -212,12 +212,12 @@
     height: 65px;
   }
   .hamburger {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .left-section {
     margin-top: 10px;
-    gap: 5px;
+    gap: 2px;
     height: 15px;
   }
 
