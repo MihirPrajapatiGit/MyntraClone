@@ -40,7 +40,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} />
             </button>
           )}
-          <Link to="/Main" className="logo-link">
+          <Link to="/" className="logo-link">
             <div className="logo">
               <img src="/logo.png" alt="Logo" />
             </div>
