@@ -41,7 +41,7 @@ const Wishlist: React.FC = () => {
               <div className="product-name">{item.name}</div>
               <div className="product-review">{item.review}</div>
               <div className="product-price">{item.price}</div>
-              <div className="cart-buttons">
+              <div>
                 <button
                   className="product-remove"
                   onClick={() => removeItem(index)}
