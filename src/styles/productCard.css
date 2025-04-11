@@ -46,7 +46,7 @@
 
 .product-add-to-cart {
   position: absolute;
-  bottom: 61px;
+  bottom: 101px;
   left: 0;
   background-color: #007bff ;
   color: white;
@@ -79,6 +79,28 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.product-add-to-WishList{
+  position: relative;
+  background-color: #ff3f6c ;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.product-remove{
+  position: relative;
+  background-color: red ;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
 .product-card img {
   width: 100%;
   height: auto;
@@ -88,7 +110,7 @@
 
 .product-review {
   position: absolute;
-  bottom: 73px;
+  bottom: 111px;
   left: 10px;
   background-color: rgba(255, 255, 255, 0.85);
   color: #333;

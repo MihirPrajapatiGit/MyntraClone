@@ -9,6 +9,7 @@ import {
 import "../styles/Header.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -39,9 +40,11 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} />
             </button>
           )}
-          <div className="logo">
-            <img src="/logo.png" alt="Logo" />
-          </div>
+          <Link to="/Main" className="logo-link">
+            <div className="logo">
+              <img src="/logo.png" alt="Logo" />
+            </div>
+          </Link>
         </div>
 
         {!isMobileView && (
@@ -81,7 +84,10 @@ const Header = () => {
             <FontAwesomeIcon icon={faUser} />
             <span>Profile</span>
           </button>
-          <button className="user-wishlist-icon">
+          <button
+            className="user-wishlist-icon"
+            onClick={() => navigate("/WishList")}
+          >
             <FontAwesomeIcon icon={faHeart} />
             <span>Wishlist</span>
           </button>
