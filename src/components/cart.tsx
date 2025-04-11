@@ -46,21 +46,28 @@ const Cart: React.FC = () => {
         <p>Your cart is empty.</p>
       ) : (
         <div className="product-grid">
-          {cartItems.map((item, index) => (
-            <div key={index} className="product-card">
-              <img src={item.imageSrc} alt={item.name} />
-              <div className="product-name">{item.name}</div>
-              <div className="product-review">{item.review}</div>
-              <div className="product-price">{item.price}</div>
-              <div className="product-quantity">
-                Quantity: {item.quantity || 1}
+          {cartItems.map((item, index) => {
+            const unitPrice = Number(item.price.replace(/[^\d]/g, ""));
+            const quantity = item.quantity || 1;
+            const totalItemPrice = unitPrice * quantity;
+
+            return (
+              <div key={index} className="product-card">
+                <img src={item.imageSrc} alt={item.name} />
+                <div className="product-name">{item.name}</div>
+                <div className="product-review">{item.review}</div>
+                <div className="product-price">
+                  Price per unit: {item.price}
+                </div>
+                <div className="product-quantity">Quantity: {quantity}</div>
+                <div className="product-total">Total: ₹{totalItemPrice}</div>
+                <div className="cart-buttons">
+                  <button onClick={() => increaseQuantity(index)}>➕</button>
+                  <button onClick={() => decreaseQuantity(index)}>➖</button>
+                </div>
               </div>
-              <div className="cart-buttons">
-                <button onClick={() => increaseQuantity(index)}>➕</button>
-                <button onClick={() => decreaseQuantity(index)}>➖</button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
