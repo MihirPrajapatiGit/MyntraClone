@@ -11,7 +11,7 @@ const addToCart = (product: Product) => {
     localStorage.getItem("cart") || "[]"
   );
   const productIndex = existingWishList.findIndex(
-    (item) => item.name === product.name
+    (item) => item.imageSrc === product.imageSrc
   );
 
   if (productIndex !== -1) {
@@ -30,7 +30,7 @@ const addToWishList = (product: Product) => {
   );
 
   const productExists = existingWishList.some(
-    (item) => item.name === product.name
+    (item) => item.imageSrc === product.imageSrc
   );
 
   if (productExists) {
