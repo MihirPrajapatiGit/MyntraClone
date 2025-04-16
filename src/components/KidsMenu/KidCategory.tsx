@@ -1,12 +1,12 @@
-import "../../styles/Main.css";
+import "../../styles/kid-menu.css";
 // import ShopByCategory from "../ShopByCategory";
 import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <main className="main">
+    <main className="kid_main">
       <div className="heading_div">
-        <h2 className="fav">FAVOURITE BRANDS</h2>
+        <h2 className="heading_2">FAVOURITE BRANDS</h2>
       </div>
       <Link to="/KIDS-Menu/products">
         <section className="favourite-brands">
