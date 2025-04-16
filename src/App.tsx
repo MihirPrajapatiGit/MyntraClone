@@ -15,6 +15,8 @@ import KidCategory from "./components/KidsMenu/KidCategory";
 import KidProductGrid from "./components/KidsMenu/KidProductCard";
 import HomeCategory from "./components/HomeMenu/HomeCategory";
 import HomeProductGrid from "./components/HomeMenu/HomeProductCard";
+import GenzCategory from "./components/GenzMenu/GenzCategory";
+import GenzProductGrid from "./components/GenzMenu/GenzProductCard";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path="/Home-Menu" element={<HomeCategory />}></Route>
           <Route path="/Home-Menu/products" element={<HomeProductGrid />} />
           <Route path="/BeautyMenu/products" element={<BeautyProductGrid />} />
+          <Route path="/GENZ-Menu" element={<GenzCategory />}></Route>
+          <Route path="/GenzMenu/products" element={<GenzProductGrid />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/WishList" element={<Wishlist />} />
         </Route>
