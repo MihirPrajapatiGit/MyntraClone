@@ -45,7 +45,7 @@ const Main = () => {
       </Link>
 
       <section className="More">
-        <img src="/GENZ-Menu/More.jpg" alt="More Offers" className="More-img" />
+        <img src="/MEN-Menu/More.jpg" alt="More Offers" className="More-img" />
       </section>
     </main>
   );
