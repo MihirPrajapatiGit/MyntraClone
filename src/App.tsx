@@ -11,6 +11,8 @@ import Cart from "./components/cart";
 import BeautyProductGrid from "./components/BeautyMenu/BeautyProductCard";
 import WomenProductGrid from "./components/WomenMenu/WomenProductCard";
 import Wishlist from "./components/WishList";
+import KidCategory from "./components/KidsMenu/KidCategory";
+import KidProductGrid from "./components/KidsMenu/KidProductCard";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/MEN-Menu/products" element={<MenProductGrid />} />
           <Route path="/WOMEN-Menu" element={<WomenCategory />}></Route>
           <Route path="/WOMEN-Menu/products" element={<WomenProductGrid />} />
+          <Route path="/KIDS-Menu" element={<KidCategory />}></Route>
+          <Route path="/KIDS-Menu/products" element={<KidProductGrid />} />
           <Route path="/BeautyMenu/products" element={<BeautyProductGrid />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/WishList" element={<Wishlist />} />
