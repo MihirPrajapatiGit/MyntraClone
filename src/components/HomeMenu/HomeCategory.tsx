@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <main className="home_main">
-      <section className="your_home">
-        <img src="/HOME-Menu/10001.jpg" />
-      </section>
+      <Link to="/Home-Menu/products">
+        <section className="your_home">
+          <img src="/HOME-Menu/10001.jpg" />
+        </section>
+      </Link>
       <div className="heading_div">
         <h2 className="heading_2">NICE TO SEE YOU, COME ON IN!</h2>
       </div>

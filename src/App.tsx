@@ -14,6 +14,7 @@ import Wishlist from "./components/WishList";
 import KidCategory from "./components/KidsMenu/KidCategory";
 import KidProductGrid from "./components/KidsMenu/KidProductCard";
 import HomeCategory from "./components/HomeMenu/HomeCategory";
+import HomeProductGrid from "./components/HomeMenu/HomeProductCard";
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
           <Route path="/WOMEN-Menu/products" element={<WomenProductGrid />} />
           <Route path="/KIDS-Menu" element={<KidCategory />}></Route>
           <Route path="/KIDS-Menu/products" element={<KidProductGrid />} />
-          <Route path="/BeautyMenu/products" element={<BeautyProductGrid />} />
           <Route path="/Home-Menu" element={<HomeCategory />}></Route>
+          <Route path="/Home-Menu/products" element={<HomeProductGrid />} />
+          <Route path="/BeautyMenu/products" element={<BeautyProductGrid />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/WishList" element={<Wishlist />} />
         </Route>
