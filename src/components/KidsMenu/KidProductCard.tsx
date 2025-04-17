@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/productCard.css";
-import products from "./KidProductData";
+import products from "./KidProductData.json";
 import { ProductCard } from "../ProductCard";
 
 const KidProductGrid: React.FC = () => (

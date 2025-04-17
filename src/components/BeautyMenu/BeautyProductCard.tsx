@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/productCard.css";
-import products from "./BeautyProductData";
+import products from "./BeautyProductData.json";
 import { ProductCard } from "../ProductCard";
 
 const BeautyProductGrid: React.FC = () => (

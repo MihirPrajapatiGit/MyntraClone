@@ -1,13 +1,10 @@
 import "../../styles/Main.css";
 import ShopByCategory from "../ShopByCategory";
-import {
-  categoryImages1,
-  categoryImages2,
-  categoryImages3,
-} from "./WomenCategoryData";
+import data from "./WomenCategoryData.json";
 import { Link } from "react-router-dom";
 
 const Main = () => {
+  const { categoryImages1, categoryImages2, categoryImages3 } = data;
   return (
     <main className="main">
       <section className="flat500off">

@@ -1,15 +1,16 @@
 import "../styles/Main.css";
 import ShopByCategory from "../components/ShopByCategory";
-import {
-  categoryImages1,
-  categoryImages2,
-  categoryImages3,
-  categoryImages4,
-  categoryImages5,
-  categoryImages6,
-} from "../components/categoryData";
+import data from "../components/categoryData.json";
 
 const Main = () => {
+  const {
+    categoryImages1,
+    categoryImages2,
+    categoryImages3,
+    categoryImages4,
+    categoryImages5,
+    categoryImages6,
+  } = data;
   return (
     <main className="main">
       <section className="flat500off">

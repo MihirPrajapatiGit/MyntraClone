@@ -1,6 +1,6 @@
 import "../../styles/Main.css";
 import ShopByCategory from "../ShopByCategory";
-import { categoryImages1, categoryImages2 } from "./GenzCategoryData";
+import { categoryImages1, categoryImages2 } from "./GenzCategoryData.json";
 
 import { Link } from "react-router-dom";
 
