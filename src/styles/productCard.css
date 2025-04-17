@@ -117,6 +117,10 @@
   transition: all 0.3s ease;
 }
 
+.product-add-to-WishList:active{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .product-remove{
   position: relative;
   background-color: red ;
