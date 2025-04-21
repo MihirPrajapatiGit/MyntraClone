@@ -10,16 +10,23 @@ type Product = {
 const Wishlist: React.FC = () => {
   const [WishListItems, setWishListItems] = useState<Product[]>([]);
 
+  // Fetch wishlist from backend
   useEffect(() => {
-    const wishListData = localStorage.getItem("WishList");
-    if (wishListData) {
-      setWishListItems(JSON.parse(wishListData));
-    }
+    fetch("http://localhost:5000/wishlist")
+      .then((res) => res.json())
+      .then((data) => setWishListItems(data))
+      .catch((err) => console.error("Error fetching wishlist:", err));
   }, []);
 
+  // Send updated wishlist to backend
   const updateWishList = (updatedItems: Product[]) => {
     setWishListItems(updatedItems);
-    localStorage.setItem("WishList", JSON.stringify(updatedItems));
+
+    fetch("http://localhost:5000/wishlist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedItems),
+    }).catch((err) => console.error("Error updating wishlist:", err));
   };
 
   const removeItem = (index: number) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/order-summary.css"; // Your new CSS file
+import "../styles/order-summary.css";
 
 type Product = {
   imageSrc: string;
@@ -19,15 +19,26 @@ const Cart: React.FC = () => {
   const [showProgress, setShowProgress] = useState(false);
 
   useEffect(() => {
-    const cartData = localStorage.getItem("cart");
-    if (cartData) {
-      setCartItems(JSON.parse(cartData));
-    }
+    // Load cart from backend
+    fetch("http://localhost:5000/cart")
+      .then((res) => res.json())
+      .then((data) => {
+        setCartItems(data);
+        localStorage.setItem("cart", JSON.stringify(data)); // Optional
+      })
+      .catch((err) => console.error("Error loading cart:", err));
   }, []);
 
   const updateCart = (updatedItems: Product[]) => {
     setCartItems(updatedItems);
-    localStorage.setItem("cart", JSON.stringify(updatedItems));
+    localStorage.setItem("cart", JSON.stringify(updatedItems)); // Optional
+
+    // Save updated cart to backend
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedItems),
+    }).catch((err) => console.error("Error updating cart:", err));
   };
 
   const increaseQuantity = (index: number) => {

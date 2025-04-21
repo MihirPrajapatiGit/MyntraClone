@@ -6,25 +6,38 @@ type Product = {
   quantity?: number;
 };
 
-const addToCart = (product: Product) => {
-  const existingWishList: Product[] = JSON.parse(
+const saveToBackend = async (endpoint: string, data: Product[]) => {
+  try {
+    await fetch(`http://localhost:5000/${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  } catch (err) {
+    console.error(`Error saving to ${endpoint}:`, err);
+  }
+};
+
+const addToCart = async (product: Product) => {
+  const existingCart: Product[] = JSON.parse(
     localStorage.getItem("cart") || "[]"
   );
-  const productIndex = existingWishList.findIndex(
+  const productIndex = existingCart.findIndex(
     (item) => item.imageSrc === product.imageSrc
   );
 
   if (productIndex !== -1) {
-    existingWishList[productIndex].quantity =
-      (existingWishList[productIndex].quantity || 1) + 1;
+    existingCart[productIndex].quantity =
+      (existingCart[productIndex].quantity || 1) + 1;
   } else {
-    existingWishList.push({ ...product, quantity: 1 });
+    existingCart.push({ ...product, quantity: 1 });
   }
 
-  localStorage.setItem("cart", JSON.stringify(existingWishList));
+  localStorage.setItem("cart", JSON.stringify(existingCart));
+  await saveToBackend("cart", existingCart);
 };
 
-const addToWishList = (product: Product) => {
+const addToWishList = async (product: Product) => {
   const existingWishList: Product[] = JSON.parse(
     localStorage.getItem("WishList") || "[]"
   );
@@ -40,6 +53,7 @@ const addToWishList = (product: Product) => {
 
   existingWishList.push(product);
   localStorage.setItem("WishList", JSON.stringify(existingWishList));
+  await saveToBackend("wishlist", existingWishList);
 };
 
 export const ProductCard: React.FC<Product> = ({
