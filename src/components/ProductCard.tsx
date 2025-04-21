@@ -8,7 +8,7 @@ type Product = {
 
 const saveToBackend = async (endpoint: string, data: Product[]) => {
   try {
-    await fetch(`http://localhost:5000/${endpoint}`, {
+    await fetch(`https://myntraclone-1mus.onrender.com/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

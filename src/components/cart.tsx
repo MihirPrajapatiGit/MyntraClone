@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
 
   useEffect(() => {
     // Load cart from backend
-    fetch("http://localhost:5000/cart")
+    fetch("https://myntraclone-1mus.onrender.com/cart")
       .then((res) => res.json())
       .then((data) => {
         setCartItems(data);
@@ -34,7 +34,7 @@ const Cart: React.FC = () => {
     localStorage.setItem("cart", JSON.stringify(updatedItems)); // Optional
 
     // Save updated cart to backend
-    fetch("http://localhost:5000/cart", {
+    fetch("https://myntraclone-1mus.onrender.com/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedItems),

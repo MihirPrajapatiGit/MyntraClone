@@ -12,7 +12,7 @@ const Wishlist: React.FC = () => {
 
   // Fetch wishlist from backend
   useEffect(() => {
-    fetch("http://localhost:5000/wishlist")
+    fetch("https://myntraclone-1mus.onrender.com/wishlist")
       .then((res) => res.json())
       .then((data) => setWishListItems(data))
       .catch((err) => console.error("Error fetching wishlist:", err));
@@ -22,7 +22,7 @@ const Wishlist: React.FC = () => {
   const updateWishList = (updatedItems: Product[]) => {
     setWishListItems(updatedItems);
 
-    fetch("http://localhost:5000/wishlist", {
+    fetch("https://myntraclone-1mus.onrender.com/wishlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedItems),
