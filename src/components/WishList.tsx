@@ -11,22 +11,34 @@ const Wishlist: React.FC = () => {
   const [WishListItems, setWishListItems] = useState<Product[]>([]);
 
   // Fetch wishlist from backend
+  const fetchWishlist = async () => {
+    try {
+      const res = await fetch("https://myntraclone-1mus.onrender.com/wishlist");
+      const data = await res.json();
+      setWishListItems(data);
+      localStorage.setItem("WishList", JSON.stringify(data));
+    } catch (err) {
+      console.error("Error fetching wishlist:", err);
+    }
+  };
+
   useEffect(() => {
-    fetch("https://myntraclone-1mus.onrender.com/wishlist")
-      .then((res) => res.json())
-      .then((data) => setWishListItems(data))
-      .catch((err) => console.error("Error fetching wishlist:", err));
+    fetchWishlist();
   }, []);
 
-  // Send updated wishlist to backend
-  const updateWishList = (updatedItems: Product[]) => {
-    setWishListItems(updatedItems);
-
-    fetch("https://myntraclone-1mus.onrender.com/wishlist", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedItems),
-    }).catch((err) => console.error("Error updating wishlist:", err));
+  // Update wishlist in backend and localStorage
+  const updateWishList = async (updatedItems: Product[]) => {
+    try {
+      setWishListItems(updatedItems);
+      localStorage.setItem("WishList", JSON.stringify(updatedItems));
+      await fetch("https://myntraclone-1mus.onrender.com/wishlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedItems),
+      });
+    } catch (err) {
+      console.error("Error updating wishlist:", err);
+    }
   };
 
   const removeItem = (index: number) => {
