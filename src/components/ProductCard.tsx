@@ -1,3 +1,7 @@
+import React from "react";
+import { useDispatch } from "react-redux";
+import { updateCartCount } from "../store/cartSlice"; // Adjust path accordingly
+
 type Product = {
   imageSrc: string;
   name: string;
@@ -6,9 +10,14 @@ type Product = {
   quantity?: number;
 };
 
+const dispatchCartUpdateEvent = () => {
+  const event = new Event("storage");
+  window.dispatchEvent(event);
+};
+
 const saveToBackend = async (endpoint: string, data: Product[]) => {
   try {
-    await fetch(`https://myntraclone-1mus.onrender.com/${endpoint}`, {
+    await fetch(`http://localhost:5000/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -18,7 +27,7 @@ const saveToBackend = async (endpoint: string, data: Product[]) => {
   }
 };
 
-const addToCart = async (product: Product) => {
+const addToCart = async (product: Product, dispatch: any) => {
   const existingCart: Product[] = JSON.parse(
     localStorage.getItem("cart") || "[]"
   );
@@ -35,6 +44,16 @@ const addToCart = async (product: Product) => {
 
   localStorage.setItem("cart", JSON.stringify(existingCart));
   await saveToBackend("cart", existingCart);
+
+  // Update Redux store with new cart count
+  const totalCount = existingCart.reduce(
+    (sum, item) => sum + (item.quantity || 1),
+    0
+  );
+  dispatch(updateCartCount(totalCount));
+
+  // Trigger cart count update in header
+  dispatchCartUpdateEvent();
 };
 
 const addToWishList = async (product: Product) => {
@@ -61,23 +80,27 @@ export const ProductCard: React.FC<Product> = ({
   name,
   review,
   price,
-}) => (
-  <div className="product-card">
-    <img src={imageSrc} alt={name} />
-    <div className="product-review">{review}</div>
-    <div className="product-name">{name}</div>
-    <div className="product-price">{price}</div>
-    <button
-      className="product-add-to-cart"
-      onClick={() => addToCart({ imageSrc, name, review, price })}
-    >
-      ADD TO CART
-    </button>
-    <button
-      className="product-add-to-WishList"
-      onClick={() => addToWishList({ imageSrc, name, review, price })}
-    >
-      ADD TO WishList
-    </button>
-  </div>
-);
+}) => {
+  const dispatch = useDispatch();
+
+  return (
+    <div className="product-card">
+      <img src={imageSrc} alt={name} />
+      <div className="product-review">{review}</div>
+      <div className="product-name">{name}</div>
+      <div className="product-price">{price}</div>
+      <button
+        className="product-add-to-cart"
+        onClick={() => addToCart({ imageSrc, name, review, price }, dispatch)}
+      >
+        ADD TO CART
+      </button>
+      <button
+        className="product-add-to-WishList"
+        onClick={() => addToWishList({ imageSrc, name, review, price })}
+      >
+        ADD TO WishList
+      </button>
+    </div>
+  );
+};

@@ -10,8 +10,12 @@ import "../styles/Header.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store"; // Adjust path accordingly
+import { updateCartCount } from "../store/cartSlice"; // Adjust path accordingly
 
-const Header = () => {
+const Header: React.FC = () => {
+  const cartCount = useSelector((state: RootState) => state.cart.count);
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 1000);
@@ -94,6 +98,7 @@ const Header = () => {
           <button className="user-cart-icon" onClick={() => navigate("/cart")}>
             <FontAwesomeIcon icon={faBagShopping} />
             <span>Cart</span>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </button>
         </div>
       </header>

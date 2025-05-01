@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store"; // Adjust path to your store
+import { updateCartCount } from "../store/cartSlice"; // Adjust path as well
 import "../styles/order-summary.css";
 
 type Product = {
@@ -14,31 +17,60 @@ const cleanPrice = (priceStr: string) => {
   return match ? parseFloat(match[1]) : 0;
 };
 
+// Custom event to trigger cart updates
+const dispatchCartUpdateEvent = () => {
+  const event = new Event("storage");
+  window.dispatchEvent(event);
+};
+
 const Cart: React.FC = () => {
+  const dispatch = useDispatch();
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [showProgress, setShowProgress] = useState(false);
+  const cartCount = useSelector((state: RootState) => state.cart.count);
 
   useEffect(() => {
-    // Load cart from backend
-    fetch("https://myntraclone-1mus.onrender.com/cart")
+    const storedCart: Product[] = JSON.parse(
+      localStorage.getItem("cart") || "[]"
+    );
+    setCartItems(storedCart);
+
+    // Update Redux store cart count
+    const totalCount = storedCart.reduce(
+      (sum, item) => sum + (item.quantity || 1),
+      0
+    );
+    dispatch(updateCartCount(totalCount));
+
+    // Optionally, sync with backend
+    fetch("http://localhost:5000/cart")
       .then((res) => res.json())
       .then((data) => {
         setCartItems(data);
-        localStorage.setItem("cart", JSON.stringify(data)); // Optional
+        localStorage.setItem("cart", JSON.stringify(data));
       })
       .catch((err) => console.error("Error loading cart:", err));
-  }, []);
+  }, [dispatch]);
 
   const updateCart = (updatedItems: Product[]) => {
     setCartItems(updatedItems);
-    localStorage.setItem("cart", JSON.stringify(updatedItems)); // Optional
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
+
+    // Trigger cart count update
+    const totalCount = updatedItems.reduce(
+      (sum, item) => sum + (item.quantity || 1),
+      0
+    );
+    dispatch(updateCartCount(totalCount));
 
     // Save updated cart to backend
-    fetch("https://myntraclone-1mus.onrender.com/cart", {
+    fetch("http://localhost:5000/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedItems),
     }).catch((err) => console.error("Error updating cart:", err));
+
+    dispatchCartUpdateEvent();
   };
 
   const increaseQuantity = (index: number) => {
@@ -99,7 +131,7 @@ const Cart: React.FC = () => {
             {cartItems.map((item, i) => (
               <div key={i} className="summary-item">
                 <span>
-                  {item.name} x {item.quantity}
+                  {item.name} x {item.quantity || 1}
                 </span>
                 <span>
                   ₹{(cleanPrice(item.price) * (item.quantity || 1)).toFixed(2)}

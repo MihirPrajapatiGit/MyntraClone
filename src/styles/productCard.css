@@ -1,5 +1,6 @@
 .product-grid-wrapper {
   background-color: white;
+  margin-top: 77px;
   border-top: solid 1px rgb(247, 244, 244);
   width: 100%;
   display: flex;
@@ -179,3 +180,21 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .product-grid-wrapper {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  .product-grid-wrapper {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid-wrapper {
+    margin-top: 0px;
+  }
+}

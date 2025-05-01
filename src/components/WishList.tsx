@@ -13,7 +13,7 @@ const Wishlist: React.FC = () => {
   // Fetch wishlist from backend
   const fetchWishlist = async () => {
     try {
-      const res = await fetch("https://myntraclone-1mus.onrender.com/wishlist");
+      const res = await fetch("http://localhost:5000/wishlist");
       const data = await res.json();
       setWishListItems(data);
       localStorage.setItem("WishList", JSON.stringify(data));
@@ -31,7 +31,7 @@ const Wishlist: React.FC = () => {
     try {
       setWishListItems(updatedItems);
       localStorage.setItem("WishList", JSON.stringify(updatedItems));
-      await fetch("https://myntraclone-1mus.onrender.com/wishlist", {
+      await fetch("http://localhost:5000/wishlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedItems),
