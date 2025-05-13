@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { updateCartCount } from "../store/cartSlice"; // Adjust path accordingly
+import { Dispatch, UnknownAction } from "@reduxjs/toolkit";
 
 type Product = {
   imageSrc: string;
@@ -27,7 +28,10 @@ const saveToBackend = async (endpoint: string, data: Product[]) => {
   }
 };
 
-const addToCart = async (product: Product, dispatch: any) => {
+const addToCart = async (
+  product: Product,
+  dispatch: Dispatch<UnknownAction>
+) => {
   const existingCart: Product[] = JSON.parse(
     localStorage.getItem("cart") || "[]"
   );

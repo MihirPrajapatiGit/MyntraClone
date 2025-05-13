@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store"; // Adjust path to your store
+import { useDispatch } from "react-redux";
 import { updateCartCount } from "../store/cartSlice"; // Adjust path as well
 import "../styles/order-summary.css";
 
@@ -27,7 +26,6 @@ const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [showProgress, setShowProgress] = useState(false);
-  const cartCount = useSelector((state: RootState) => state.cart.count);
 
   useEffect(() => {
     const storedCart: Product[] = JSON.parse(
